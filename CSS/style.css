@@ -19,15 +19,18 @@
     line-height: normal;
   }
 
-  header {
+  header{
     width: 100%;
     height: 117px;
     background: linear-gradient(90deg, #1B1818 0%, #2C6320 100%);
     color: #000000;
-    border: 3px solid
+    border: 3px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
   
-  header h1 {
+  header h2 {
     color: #FEFEFE;
     font-family: Inter;
     font-size: 50px;
