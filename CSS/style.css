@@ -54,3 +54,34 @@
     font-weight: 400;
     line-height: normal;
 }
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: none;
+    width: 100%;
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    body {
+        height: 832px;
+        background: linear-gradient(180deg, #59C942 0%, #2C6320 100%);
+        font-size: 36px;
+        
+    }
+    .slideshow-container {
+        max-width: 80%; /* Beperkte breedte op tablets */
+    }
+}
