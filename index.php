@@ -1,6 +1,5 @@
 <?php include 'PHP/header.php'; ?>
-<body>
- 
+<main>
 Hello world!
-</body>
+</main>
 <?php include 'PHP/footer.php'; ?>
