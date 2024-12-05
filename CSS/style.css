@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Inter;
   }
   
   body {
@@ -19,15 +20,18 @@
     line-height: normal;
   }
 
-  header {
+  header{
     width: 100%;
     height: 117px;
     background: linear-gradient(90deg, #1B1818 0%, #2C6320 100%);
     color: #000000;
-    border: 3px solid
+    border: 3px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
   
-  header h1 {
+  header h2 {
     color: #FEFEFE;
     font-family: Inter;
     font-size: 50px;
@@ -35,6 +39,15 @@
     font-weight: 400;
     line-height: normal;
   }
+
+  header a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  header a:hover {
+    text-decoration: underline;
+}
  
   footer {
     display: flex;
