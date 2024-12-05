@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Inter;
   }
   
   body {
@@ -38,6 +39,15 @@
     font-weight: 400;
     line-height: normal;
   }
+
+  header a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  header a:hover {
+    text-decoration: underline;
+}
  
   footer {
     display: flex;
