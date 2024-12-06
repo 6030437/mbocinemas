@@ -1,4 +1,4 @@
-<?php include 'PHP\header.php'; ?>
+<?php include 'PHP/header.php'; ?>
 <main>
 Hello world!
 </main>
