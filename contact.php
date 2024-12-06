@@ -20,3 +20,4 @@
     </form>
 </div>
 <?php include 'PHP/footer.php'; ?>
+<script src="script.js"></script>
