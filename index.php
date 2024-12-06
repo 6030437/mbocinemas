@@ -2,4 +2,4 @@
 <main>
 Hello world!
 </main>
-<?php include 'PHP\footer.php'; ?>
+<?php include 'PHP/footer.php'; ?>
