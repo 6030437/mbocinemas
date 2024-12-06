@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include '../php/header.php'; ?>
 <main>
 Medewerkersportaal</main>
-<?php include 'footer.php'; ?>
+<?php include '../php/footer.php'; ?>
