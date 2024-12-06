@@ -1,5 +1,5 @@
 
-<?php include '../php/header.php'; ?>
+<?php include 'PHP/header.php'; ?>
 <?php include 'footer.php'; 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST['username'] ?? '';
