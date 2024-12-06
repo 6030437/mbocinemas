@@ -1,100 +1,69 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Inter;
-  }
-  
-  body {
-    width: 100%;
-    height: 832px;
-    background: linear-gradient(180deg, #59C942 0%, #2C6320 100%);
-  }
-  
-  body {
-    color: #000;
-    font-family: Inter;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-
-  header{
-    width: 100%;
-    height: 117px;
-    background: linear-gradient(90deg, #1B1818 0%, #2C6320 100%);
-    color: #000000;
-    border: 3px solid;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-  
-  header h2 {
-    color: #FEFEFE;
-    font-family: Inter;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-
-  header a {
-    color: #000;
-    text-decoration: none;
-  }
-
-  header a:hover {
-    text-decoration: underline;
-}
- 
-  footer {
-    display: flex;
-    width: 100%;
-    padding: 23px 47px;
-    justify-content: flex-end;
-    align-items: center;
-    background: linear-gradient(90deg, #2C6320 0%, rgba(71, 162, 53, 0.50) 25%, rgba(83, 187, 62, 0.50) 53.5%, rgba(89, 201, 66, 0.50) 79%);
-    border: 3px solid #000000;
-  }
-
-  footer h1 {
-    color: #000;
-    font-family: 'Inter', sans-serif;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter;
 }
 
-.slideshow-container {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
+body {
+  width: 100%;
+  height: 832px;
+  background: linear-gradient(180deg, #59C942 0%, #2C6320 100%);
 }
 
-.slides {
-    display: none;
-    width: 100%;
+body {
+  color: #000;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-.slides img {
-    width: 100%;
-    height: auto;
+header{
+  width: 100%;
+  height: 117px;
+  background: linear-gradient(90deg, #1B1818 0%, #2C6320 100%);
+  color: #000000;
+  border: 3px solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
+header h2 {
+  color: #FEFEFE;
+  font-family: Inter;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 
+header a {
+  color: #000;
+  text-decoration: none;
+}
 
-@media screen and (min-width: 768px) and (max-width: 1024px){
-    body {
-        height: 832px;
-        background: linear-gradient(180deg, #59C942 0%, #2C6320 100%);
-        font-size: 36px;
-        
-    }
-    .slideshow-container {
-        max-width: 80%; /* Beperkte breedte op tablets */
-    }
+header a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  padding: 23px 47px;
+  justify-content: flex-end;
+  align-items: center;
+  background: linear-gradient(90deg, #2C6320 0%, rgba(71, 162, 53, 0.50) 25%, rgba(83, 187, 62, 0.50) 53.5%, rgba(89, 201, 66, 0.50) 79%);
+  border: 3px solid #000000;
+}
+
+footer h1 {
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
