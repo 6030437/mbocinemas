@@ -9,6 +9,7 @@
     <meta name="author" content="MBO Cinemas Team(Mostafa, Ayan, Mylo)">
     
     <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <script src="js/cript.js"></script>
 
     <title>Mbocinemas Home</title>
 </head>

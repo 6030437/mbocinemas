@@ -67,3 +67,80 @@ footer h1 {
   font-weight: 400;
   line-height: normal;
 }
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slides {
+  display: none;
+  width: 100%;
+}
+
+.slides img {
+  width: 100%;
+  height: auto;
+}
+
+.intro-text {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.intro-text p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .slideshow-container {
+      max-width: 80%; /* Beperkte breedte op tablets */
+  }
+
+  .intro-text {
+      max-width: 600px; /* Beperkte breedte op tablets */
+  }
+
+  .intro-text h2 {
+      font-size: 1.5rem; /* Kleinere kopgrootte op tablets */
+  }
+
+  .intro-text p {
+      font-size: 0.9rem; /* Kleinere tekstgrootte op tablets */
+  }
+  footer {
+      padding: 15px 30px; /* Kleinere footer padding op tablets */
+  }
+
+  header a {
+      font-size: 0.9rem; /* Kleinere tekstgrootte op tablets */
+  }
+
+  #movies {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 80%;
+  }
+
+  #movies img {
+      width: 100%;
+  }
+
+
+}
