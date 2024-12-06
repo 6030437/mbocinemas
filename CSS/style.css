@@ -20,33 +20,91 @@ body {
   line-height: normal;
 }
 
-header{
+/* Algemene reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+}
+
+/* Header */
+header {
   width: 100%;
-  height: 117px;
   background: linear-gradient(90deg, #1B1818 0%, #2C6320 100%);
-  color: #000000;
-  border: 3px solid;
+  color: #FEFEFE;
+  border-bottom: 3px solid #2C6320;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
+/* Titel */
 header h2 {
-  color: #FEFEFE;
-  font-family: Inter;
-  font-size: 50px;
-  font-style: normal;
+  margin: 0;
+  font-size: 24px;
   font-weight: 400;
-  line-height: normal;
 }
 
-header a {
-  color: #000;
+/* Navigatiebalk */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #FEFEFE;
   text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
 }
 
-header a:hover {
-  text-decoration: underline;
+nav a:hover {
+  color: #d4e3fc;
+}
+
+/* Hamburger-menu */
+.menu-toggle {
+  display: none; /* Standaard verborgen op grotere schermen */
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #FEFEFE;
+  cursor: pointer;
+}
+
+/* Mobiele weergave */
+@media (max-width: 768px) {
+  nav {
+      display: none; /* Verberg het menu standaard */
+      flex-direction: column;
+      background-color: #00ff15;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      border: 2px solid #2C6320;
+      padding: 10px;
+  }
+
+  nav.active {
+      display: flex; /* Toon het menu als het actief is */
+  }
+
+  .menu-toggle {
+      display: block; /* Toon de hamburgerknop */
+  }
+}
+
+/* Voor desktop: standaard weergave */
+@media (min-width: 769px) {
+  .menu-toggle {
+      display: none; /* Verberg de hamburgerknop */
+  }
+
+  nav {
+      display: flex; /* Toon de navigatiebalk altijd op desktop */
+  }
 }
 
 footer {
@@ -67,3 +125,179 @@ footer h1 {
   font-weight: 400;
   line-height: normal;
 }
+
+@media (max-width: 600px) {
+  .header {
+      font-size: 18px;
+  }
+
+  .nav {
+      flex-direction: column;
+  }
+
+  .nav-link {
+      font-size: 16px;
+      padding: 8px 0;
+  }
+
+  .container {
+      padding: 10px;
+  }
+
+  .footer {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+      width: 100%;
+      height: auto; /* Past de hoogte aan op basis van de inhoud */
+      padding: 10px;
+      background: linear-gradient(90deg, #1B1818 0%, #2C6320 100%);
+      color: #000000;
+      border: 3px solid;
+      display: flex;
+      flex-direction: column; /* Stapelt de inhoud verticaal */
+      align-items: center;
+      justify-content: center;
+  }
+
+  header h2 {
+      color: #FEFEFE;
+      font-family: Inter, sans-serif;
+      font-size: 28px; /* Kleiner lettertype voor telefoons */
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 10px; /* Ruimte tussen de titel en links */
+  }
+
+  header a {
+      color: #000;
+      font-size: 16px; /* Kleiner lettertype voor links */
+      margin: 5px 0; /* Ruimte tussen de links */
+      text-decoration: none;
+  }
+
+  header a:hover {
+      text-decoration: underline;
+  }
+}
+
+/* Algemene stijl voor de inlogknop */
+.submit-button {
+  display: inline-block;
+  padding: 10px 20px; /* Basis padding */
+  font-size: 16px; /* Standaard tekstgrootte */
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #2C6320;
+  border: 2px solid #1B1818;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover-effect voor pc */
+.submit-button:hover {
+  background-color: #1B1818;
+  color: #ffffff;
+}
+
+/* Mobiele stijl */
+@media (max-width: 768px) {
+  .submit-button {
+      font-size: 18px; /* Iets grotere tekst voor telefoons */
+      padding: 14px 24px; /* Meer tikruimte */
+  }
+
+  .submit-button:active {
+      transform: scale(0.95); /* Klikfeedback op mobiele apparaten */
+  }
+}
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #043600;
+  border: 1px solid #003c05;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+/* Form group */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Inlogknop */
+.login-button {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #003406;
+  background-color: #2C6320;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-button:hover {
+  background-color: #1B1818;
+}
+
+.login-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsieve stijl voor mobiel */
+@media (max-width: 768px) {
+  .login-container {
+      margin: 20px;
+      padding: 15px;
+  }
+
+  .login-container h2 {
+      font-size: 20px;
+  }
+
+  .form-group label {
+      font-size: 14px;
+  }
+
+  .form-group input {
+      font-size: 14px;
+  }
+
+  .login-button {
+      font-size: 14px;
+  }}

@@ -12,7 +12,10 @@
             <input type="password" id="password" name="password" required>
         </div>
         <button type="submit">Inloggen</button>
+
     </form>
+
+    <script src="script.js"></script>
 </div>
 </main>
 <?php include 'PHP/footer.php'; ?>

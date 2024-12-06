@@ -1,5 +1,9 @@
 
+<<<<<<< Updated upstream
 <?php include 'PHP/header.php'; ?>
+=======
+<?php include 'header.php'; ?>
+>>>>>>> Stashed changes
 <?php include 'footer.php'; 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST['username'] ?? '';
