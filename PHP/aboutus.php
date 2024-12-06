@@ -1,4 +1,4 @@
-<?php include 'PHP/header.php'; ?>
+<?php include 'header.php'; ?>
         <main>
         <h1>About MBO Cinemas</h1>
         <section>
@@ -14,4 +14,4 @@
             <p>If you have any questions or feedback, feel free to reach out to us at <a href="mailto:info@mbocinemas.com">info@mbocinemas.com</a>.</p>
         </section>
     </main>
-<?php include 'PHP/footer.php'; ?>
+<?php include 'footer.php'; ?>

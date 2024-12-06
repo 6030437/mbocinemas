@@ -1,4 +1,4 @@
-
+<?php include 'header.php'; ?>
     <main>
         <h1>Reserveren</h1>
         <img src="path_to_film_image.jpg" alt="Film Afbeelding">
@@ -19,4 +19,5 @@
             <button type="submit">Reserveren</button>
         </form>
     </main>
+<?php include 'footer.php'; ?>
 

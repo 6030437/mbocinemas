@@ -1,3 +1,5 @@
+<?php include 'header.php'; ?>
+<main>
 <div class="login-container">
     <h2>Inloggen</h2>
     <form action="login.php" method="post">
@@ -12,3 +14,6 @@
         <button type="submit">Inloggen</button>
     </form>
 </div>
+</main>
+<?php include 'footer.php'; ?>
+
