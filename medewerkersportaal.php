@@ -1,5 +1,4 @@
 <?php include 'PHP\header.php'; ?>
 <main>
-Hello world!
-</main>
+Medewerkersportaal</main>
 <?php include 'PHP\footer.php'; ?>
