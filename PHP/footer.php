@@ -1,6 +1,6 @@
 </body>
 <footer> 
-    <h1>👤 Medewerkersportaal</h1>
+    <a href="PHP\medewerkersportaal.php"<h1>👤 Medewerkersportaal</h1>
 </footer>
 
 </html>
