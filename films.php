@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include 'PHP/header.php'; ?>
 <main>
     <section id="movies">
         <a href="#"><img src="" alt="film1"></a>
@@ -7,4 +7,4 @@
         <a href="#"><img src="" alt="film4"></a>
     </section>
 </main>
-<?php include 'footer.php'; ?>
+<?php include 'PHP/footer.php'; ?>

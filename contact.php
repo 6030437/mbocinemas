@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include 'PHP/header.php'; ?>
 <div class="contact-form">
     <h2>Contact Us</h2>
     <form action="send_contact.php" method="post">
@@ -19,4 +19,4 @@
         </div>
     </form>
 </div>
-<?php include 'footer.php'; ?>
+<?php include 'PHP/footer.php'; ?>

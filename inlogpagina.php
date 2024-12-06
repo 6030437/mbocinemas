@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include 'PHP/header.php'; ?>
 <main>
 <div class="login-container">
     <h2>Inloggen</h2>
@@ -15,5 +15,5 @@
     </form>
 </div>
 </main>
-<?php include 'footer.php'; ?>
+<?php include 'PHP/footer.php'; ?>
 
