@@ -20,33 +20,91 @@ body {
   line-height: normal;
 }
 
-header{
+/* Algemene reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+}
+
+/* Header */
+header {
   width: 100%;
-  height: 117px;
   background: linear-gradient(90deg, #1B1818 0%, #2C6320 100%);
-  color: #000000;
-  border: 3px solid;
+  color: #FEFEFE;
+  border-bottom: 3px solid #2C6320;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
+/* Titel */
 header h2 {
-  color: #FEFEFE;
-  font-family: Inter;
-  font-size: 50px;
-  font-style: normal;
+  margin: 0;
+  font-size: 24px;
   font-weight: 400;
-  line-height: normal;
 }
 
-header a {
-  color: #000;
+/* Navigatiebalk */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #FEFEFE;
   text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
 }
 
-header a:hover {
-  text-decoration: underline;
+nav a:hover {
+  color: #d4e3fc;
+}
+
+/* Hamburger-menu */
+.menu-toggle {
+  display: none; /* Standaard verborgen op grotere schermen */
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #FEFEFE;
+  cursor: pointer;
+}
+
+/* Mobiele weergave */
+@media (max-width: 768px) {
+  nav {
+      display: none; /* Verberg het menu standaard */
+      flex-direction: column;
+      background-color: #00ff15;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      border: 2px solid #2C6320;
+      padding: 10px;
+  }
+
+  nav.active {
+      display: flex; /* Toon het menu als het actief is */
+  }
+
+  .menu-toggle {
+      display: block; /* Toon de hamburgerknop */
+  }
+}
+
+/* Voor desktop: standaard weergave */
+@media (min-width: 769px) {
+  .menu-toggle {
+      display: none; /* Verberg de hamburgerknop */
+  }
+
+  nav {
+      display: flex; /* Toon de navigatiebalk altijd op desktop */
+  }
 }
 
 footer {
@@ -68,79 +126,178 @@ footer h1 {
   line-height: normal;
 }
 
-.slideshow-container {
-  position: relative;
-  max-width: 100%;
-  margin: auto;
-  overflow: hidden;
-}
-
-.slides {
-  display: none;
-  width: 100%;
-}
-
-.slides img {
-  width: 100%;
-  height: auto;
-}
-
-.intro-text {
-  text-align: center;
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 800px;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-}
-
-.intro-text h2 {
-  font-size: 2rem;
-  color: #444;
-  margin-bottom: 15px;
-}
-
-.intro-text p {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .slideshow-container {
-      max-width: 80%; /* Beperkte breedte op tablets */
+@media (max-width: 600px) {
+  .header {
+      font-size: 18px;
   }
 
-  .intro-text {
-      max-width: 600px; /* Beperkte breedte op tablets */
+  .nav {
+      flex-direction: column;
   }
 
-  .intro-text h2 {
-      font-size: 1.5rem; /* Kleinere kopgrootte op tablets */
+  .nav-link {
+      font-size: 16px;
+      padding: 8px 0;
   }
 
-  .intro-text p {
-      font-size: 0.9rem; /* Kleinere tekstgrootte op tablets */
+  .container {
+      padding: 10px;
   }
-  footer {
-      padding: 15px 30px; /* Kleinere footer padding op tablets */
+
+  .footer {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+      width: 100%;
+      height: auto; /* Past de hoogte aan op basis van de inhoud */
+      padding: 10px;
+      background: linear-gradient(90deg, #1B1818 0%, #2C6320 100%);
+      color: #000000;
+      border: 3px solid;
+      display: flex;
+      flex-direction: column; /* Stapelt de inhoud verticaal */
+      align-items: center;
+      justify-content: center;
+  }
+
+  header h2 {
+      color: #FEFEFE;
+      font-family: Inter, sans-serif;
+      font-size: 28px; /* Kleiner lettertype voor telefoons */
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 10px; /* Ruimte tussen de titel en links */
   }
 
   header a {
-      font-size: 0.9rem; /* Kleinere tekstgrootte op tablets */
+      color: #000;
+      font-size: 16px; /* Kleiner lettertype voor links */
+      margin: 5px 0; /* Ruimte tussen de links */
+      text-decoration: none;
   }
 
-  #movies {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      max-width: 80%;
+  header a:hover {
+      text-decoration: underline;
   }
-
-  #movies img {
-      width: 100%;
-  }
-
-
 }
+
+/* Algemene stijl voor de inlogknop */
+.submit-button {
+  display: inline-block;
+  padding: 10px 20px; /* Basis padding */
+  font-size: 16px; /* Standaard tekstgrootte */
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #2C6320;
+  border: 2px solid #1B1818;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover-effect voor pc */
+.submit-button:hover {
+  background-color: #1B1818;
+  color: #ffffff;
+}
+
+/* Mobiele stijl */
+@media (max-width: 768px) {
+  .submit-button {
+      font-size: 18px; /* Iets grotere tekst voor telefoons */
+      padding: 14px 24px; /* Meer tikruimte */
+  }
+
+  .submit-button:active {
+      transform: scale(0.95); /* Klikfeedback op mobiele apparaten */
+  }
+}
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #043600;
+  border: 1px solid #003c05;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+/* Form group */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Inlogknop */
+.login-button {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #003406;
+  background-color: #2C6320;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-button:hover {
+  background-color: #1B1818;
+}
+
+.login-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsieve stijl voor mobiel */
+@media (max-width: 768px) {
+  .login-container {
+      margin: 20px;
+      padding: 15px;
+  }
+
+  .login-container h2 {
+      font-size: 20px;
+  }
+
+  .form-group label {
+      font-size: 14px;
+  }
+
+  .form-group input {
+      font-size: 14px;
+  }
+
+  .login-button {
+      font-size: 14px;
+  }}
