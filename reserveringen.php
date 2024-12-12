@@ -22,5 +22,6 @@
         <br><br>
         </form>
     </main>
+    <script src="script.js"></script>
 <?php include 'PHP/footer.php'; ?>
 

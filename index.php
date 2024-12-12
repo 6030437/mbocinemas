@@ -1,29 +1,30 @@
 <?php include 'PHP/header.php'; ?>
 <main>
-<div class="slideshow-container">
-        <div class="slides">
-            <img src="img/slide1.jpg" alt="Slide 1">
-        </div>
-        <div class="slides">
-            <img src="img/slide2.jpg" alt="Slide 2">
-        </div>
-        <div class="slides">
-            <img src="img/slide3.jpg" alt="Slide 3">
-        </div>
-    </div>
-    <section class="intro-text">
-    <h2>Welkom bij Mbocinemas</h2>
-    <p>
-        Bij Mbocinemas beleef je de magie van film zoals nooit tevoren. Geniet van de nieuwste films, comfortabele stoelen en een unieke bioscoopervaring. 
-        Of je nu een fan bent van actie, romantiek, komedie of avonturen, wij hebben voor ieder wat wils.
-    </p>
-    <p>
-        Bekijk ons uitgebreide aanbod aan films, koop je tickets online en geniet van exclusieve aanbiedingen. 
-        Maak van je bezoek een complete avond uit met onze heerlijke snacks en drankjes.
-    </p>
-    <p>
-        Laat je meevoeren door de wereld van film, hier bij Mbocinemas. De perfecte plek voor ontspanning en entertainment!
-    </p>
-</section>
+    <section class="slideshow-container">
+        <section class="slide fade">
+            <img src="img/joker.jpeg" alt="Image 1">
+            <p class="caption">Caption for Image 1</p>
+        </section>
+        <section class="slide fade">
+            <img src="img/matrix.jpeg" alt="Image 2">
+            <p class="caption">Caption for Image 2</p>
+        </section>
+        <section class="slide fade">
+            <img src="img/titanic.jpeg" alt="Image 3">
+            <p class="caption">Caption for Image 3</p>
+        </section>
+        
+        <!-- Navigatieknoppen -->
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </section>
+
+    <section class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </section>
 </main>
 <?php include 'PHP/footer.php'; ?>
+<script src="script.js"></script>
+<script src="script2.js"></script>
