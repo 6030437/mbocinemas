@@ -14,6 +14,9 @@
 </head>
 <body>
 <header>
+<div class="hamburger-menu">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav class="menu">
     <a href="index.php"><h2>🎬Mbocinemas</h2></a>
     <a href="films.php"><h3>Films</h3></a>
     <a href="reserveringen.php"><h4>Mijn Reserveringen</h4></a>

@@ -19,5 +19,6 @@
             <button type="submit">Reserveren</button>
         </form>
     </main>
+    <script src="script.js"></script>
 <?php include 'PHP/footer.php'; ?>
 

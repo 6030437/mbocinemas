@@ -20,33 +20,182 @@ body {
   line-height: normal;
 }
 
-header{
+.slideshow-container {
+  position: relative;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+/* Slides */
+.slide {
+  display: none;
+  position: relative;
+}
+
+.slide img {
   width: 100%;
-  height: 117px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Caption */
+.caption {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Navigatieknoppen */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 5px;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots */
+.dot-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s;
+}
+
+.dot.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fade animatie */
+.fade {
+  animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Algemene reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+}
+
+/* Header */
+header {
+  width: 100%;
   background: linear-gradient(90deg, #1B1818 0%, #2C6320 100%);
-  color: #000000;
-  border: 3px solid;
+  color: #FEFEFE;
+  border-bottom: 3px solid #2C6320;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
+/* Titel */
 header h2 {
-  color: #FEFEFE;
-  font-family: Inter;
-  font-size: 50px;
-  font-style: normal;
+  margin: 0;
+  font-size: 24px;
   font-weight: 400;
-  line-height: normal;
 }
 
-header a {
-  color: #000;
+/* Navigatiebalk */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #FEFEFE;
   text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
 }
 
-header a:hover {
-  text-decoration: underline;
+nav a:hover {
+  color: #d4e3fc;
+}
+
+/* Hamburger-menu */
+.menu-toggle {
+  display: none; /* Standaard verborgen op grotere schermen */
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #FEFEFE;
+  cursor: pointer;
+}
+
+/* Mobiele weergave */
+@media (max-width: 768px) {
+  nav {
+      display: none; /* Verberg het menu standaard */
+      flex-direction: column;
+      background-color: #00ff15;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      border: 2px solid #2C6320;
+      padding: 10px;
+  }
+
+  nav.active {
+      display: flex; /* Toon het menu als het actief is */
+  }
+
+  .menu-toggle {
+      display: block; /* Toon de hamburgerknop */
+  }
+}
+
+/* Voor desktop: standaard weergave */
+@media (min-width: 769px) {
+  .menu-toggle {
+      display: none; /* Verberg de hamburgerknop */
+  }
+
+  nav {
+      display: flex; /* Toon de navigatiebalk altijd op desktop */
+  }
 }
 
 footer {
@@ -67,65 +216,4 @@ footer h1 {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
-
-.carousel-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.carousel-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.carousel-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.carousel {
-  overflow: hidden;
-  width: 800px;
-}
-
-.carousel-images {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-images img {
-  width: 300px;
-  height: auto;
-}
-
-.arrow {
-  background-color: #000;
-  color: #f4f4f4;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.left-arrow {
-  left: 20px;
-}
-
-.right-arrow {
-  right: 20px;
-}
- 
-.hahaa {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
 }

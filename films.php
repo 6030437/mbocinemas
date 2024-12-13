@@ -8,3 +8,4 @@
     </section>
 </main>
 <?php include 'PHP/footer.php'; ?>
+<script src="script.js"></script>
