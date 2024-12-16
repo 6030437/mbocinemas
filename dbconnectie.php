@@ -1,8 +1,8 @@
 <?php
-$server_name = '';
-$user_name = '';
+$server_name = 'localhost';
+$user_name = 'root';
 $password = '';
-$db_name = '';
+$db_name = 'db_mbocinemas';
 
 try {
     $pdo = new PDO("mysql:host=$server_name;dbname=$db_name", $user_name, $password);
@@ -15,7 +15,7 @@ try {
 }
 
 try{
-$sql = "INSERT INTO gebruikers (username, password) VALUES (:username, :password)";
+$sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
 
 $statement = $pdo->prepare($sql);
 $username = htmlspecialchars($_POST['username']);
