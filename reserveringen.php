@@ -16,7 +16,10 @@
             <input type="email" id="email" name="email" required><br><br>
             <label for="aantal">Aantal Tickets:</label>
             <input type="number" id="aantal" name="aantal" min="1" required><br><br>
+            <label for="film">Film:</label>
+            <input type="text" id="film" name="film" required>
             <button type="submit">Reserveren</button>
+        <br><br>
         </form>
     </main>
     <script src="script.js"></script>
