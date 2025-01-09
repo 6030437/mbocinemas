@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 
 require 'PHP/header.php'; 
 require 'dbconnectie.php';
@@ -23,8 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['username'], $_POST['pa
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role'];
 
-            // Var_dump om te controleren of de sessie goed wordt ingesteld
-            var_dump($_SESSION); // Dit zal de inhoud van $_SESSION tonen
+            
 
             if ($_SESSION['role'] == 'admin') {
                 header('Location: medewerkersportaal.php');
