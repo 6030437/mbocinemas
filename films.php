@@ -1,13 +1,14 @@
 <?php 
 include 'PHP/header.php'; 
-require_once 'classes/fims.php'; 
-
-if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
+if (!isset($_SESSION['username'])) {
     header('Location: inlogpagina.php');
     exit;
 }
 
-$film = new Films();
+require_once 'classes/db.php';
+require_once 'classes/fims.php'; 
+
+$films = new Films();
 $success_message = '';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['movie_toevoegen'])) {
@@ -33,38 +34,51 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['movie_toevoegen'])) {
     }
 
     // Voeg de film toe via de Films-klasse
-    if ($film->addMovie($title, $description, $release_date, $duration, $poster)) {
+    if ($films->addMovie($title, $description, $release_date, $duration, $poster)) {
         $success_message = "Nieuwe film toegevoegd: $title";
     } else {
         $success_message = "Er is een fout opgetreden bij het toevoegen van de film.";
     }
 }
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['reserve_movie'])) {
+        $movie_id = $_POST['movie_id'];
+        $user_id = $_SESSION['id']; // Ensure user_id is stored in session
+        if ($user_id) {
+            $films->reserveMovie($movie_id, $user_id);
+        } else {
+            echo "Error: User ID is not set in the session.";
+        }
+    }
+}
+
+$all_movies = $films->getMovies();
 ?>
 
-<section class="beheer-sectie">
-    <h2>Film Toevoegen</h2>
-    <form method="POST" enctype="multipart/form-data">
-        <label for="title">Titel:</label>
-        <input type="text" id="title" name="title" required>
-
-        <label for="description">Beschrijving:</label>
-        <textarea id="description" name="description" required></textarea>
-
-        <label for="release_date">Release Datum:</label>
-        <input type="date" id="release_date" name="release_date" required>
-
-        <label for="duration">Duur (minuten):</label>
-        <input type="number" id="duration" name="duration" required>
-
-        <label for="poster">Poster:</label>
-        <input type="file" id="poster" name="poster" accept="image/*">
-
-        <button type="submit" name="movie_toevoegen">Toevoegen</button>
-    </form>
-
-    <?php if (!empty($success_message)): ?>
-        <p><?= htmlspecialchars($success_message) ?></p>
-    <?php endif; ?>
-</section>
+<main>
+    <div class="container">
+        <section class="films-sectie">
+            <h2>Films</h2>
+            <?php foreach ($all_movies as $movie): ?>
+                <div class="film">
+                    <div class="film-poster">
+                        <img src="<?php echo htmlspecialchars($movie->poster); ?>" alt="Poster">
+                    </div>
+                    <div class="film-details">
+                        <h2><?php echo htmlspecialchars($movie->title); ?></h2>
+                        <p><?php echo htmlspecialchars($movie->description); ?></p>
+                        <p>Release Datum: <?php echo htmlspecialchars($movie->release_date); ?></p>
+                        <p>Duur: <?php echo htmlspecialchars($movie->duration); ?> minuten</p>
+                        <form method="POST" style="display:inline;">
+                            <input type="hidden" name="movie_id" value="<?php echo $movie->id; ?>">
+                            <button type="submit" name="reserve_movie">Reserveer</button>
+                        </form>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </section>
+    </div>
+</main>
 
 <?php include 'PHP/footer.php'; ?>

@@ -52,6 +52,31 @@ class Films extends Database {
             echo "<img src='" . htmlspecialchars($movie->poster) . "' alt='Poster'><br><br>";
         }
     }
+
+    public function reserveMovie($movie_id, $user_id) {
+        $query = "INSERT INTO reservations (movie_id, user_id) VALUES (:movie_id, :user_id)";
+        try {
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute([
+                'movie_id' => $movie_id,
+                'user_id' => $user_id
+            ]);
+        } catch (PDOException $e) {
+            echo "Error reserving movie: " . $e->getMessage();
+        }
+    }
+
+    public function getUserReservations($user_id) {
+        $query = "SELECT movies.* FROM reservations JOIN movies ON reservations.movie_id = movies.id WHERE reservations.user_id = :user_id";
+        try {
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute(['user_id' => $user_id]);
+            return $stmt->fetchAll();
+        } catch (PDOException $e) {
+            echo "Error fetching reservations: " . $e->getMessage();
+            return [];
+        }
+    }
 }
 
 ?>

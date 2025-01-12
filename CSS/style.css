@@ -1,29 +1,135 @@
+/* Basisinstellingen */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Inter;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
   width: 100%;
-  height: 832px;
+  min-height: 100vh;
   background: linear-gradient(180deg, #59C942 0%, #2C6320 100%);
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
 }
 
-body {
-  color: #000;
-  font-family: Inter;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  overflow: hidden;
 }
 
+/* Header */
+header {
+  background: linear-gradient(90deg, #2b7d23 0%, #378925 100%);
+  color: #FEFEFE;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  padding: 20px 0;
+  border-bottom: #77aaff 3px solid;
+}
+
+header h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+header ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header li {
+  margin: 0 20px;
+}
+
+header #branding {
+  float: left;
+}
+
+header #branding h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+header nav {
+  float: right;
+  margin-top: 10px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #FEFEFE;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #d4e3fc;
+}
+
+/* Hamburger-menu voor mobiel */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: #FEFEFE;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #2C6320;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+  nav.active {
+    display: flex;
+  }
+}
+
+/* Slideshow container */
 .slideshow-container {
   position: relative;
-  max-width: 800px;
-  margin: 20px auto;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Slides */
@@ -34,56 +140,57 @@ body {
 
 .slide img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-/* Caption */
+/* Caption text */
 .caption {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
-  padding: 8px 12px;
+  padding: 10px 20px;
   border-radius: 5px;
-  text-align: center;
-  font-size: 14px;
+  font-size: 16px;
 }
 
-/* Navigatieknoppen */
+/* Navigation buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
-  padding: 10px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
+  width: 50px;
+  height: 50px;
   background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transform: translateY(-50%);
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Dots */
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
+}
+
+/* Dots/bullets/indicators */
 .dot-container {
   text-align: center;
-  margin-top: 10px;
+  margin: 15px 0;
 }
 
 .dot {
@@ -94,532 +201,70 @@ body {
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s;
+  transition: background-color 0.3s ease;
 }
 
 .dot.active, .dot:hover {
   background-color: #717171;
 }
 
-/* Fade animatie */
-.fade {
-  animation: fadeEffect 1.5s;
+/* Secties */
+.reserveringen-sectie, .films-sectie {
+  background: #ffffff;
+  padding: 30px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@keyframes fadeEffect {
-  from { opacity: 0.4; }
-  to { opacity: 1; }
-}
-
-/* Algemene reset */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f9fafb;
-  color: #333;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-header {
-    background: #333;
-    color: #fff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #77aaff 3px solid;
-}
-
-header a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-}
-
-header ul {
-    padding: 0;
-    list-style: none;
-}
-
-header li {
-    float: left;
-    display: inline;
-    padding: 0 20px 0 20px;
-}
-
-header #branding {
-    float: left;
-}
-
-header #branding h1 {
-    margin: 0;
-}
-
-header nav {
-    float: right;
-    margin-top: 10px;
-}
-
-.beheer-sectie, .films-sectie {
-    background: #fff;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.beheer-sectie h2, .films-sectie h2 {
-    margin-top: 0;
+.reserveringen-sectie:hover, .films-sectie:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .film {
-    border-bottom: 1px #ccc solid;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
-.film img {
-    max-width: 150px;
-    display: block;
-}
-
-.film h2 {
-    margin: 0;
-}
-
-.film p {
-    margin: 5px 0;
-}
-
-.film form {
-    display: inline;
-}
-
-/* Header */
-header {
-  width: 100%;
-  background: linear-gradient(90deg, #1B1818 0%, #2C6320 100%);
-  color: #FEFEFE;
-  border-bottom: 3px solid #2C6320;
-  padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-/* Titel */
-header h2 {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 400;
-}
-
-/* Navigatiebalk */
-nav {
-  display: flex;
-  gap: 20px;
-}
-
-nav a {
-  color: #FEFEFE;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #d4e3fc;
-}
-
-/* Hamburger-menu */
-.menu-toggle {
-  display: none; /* Standaard verborgen op grotere schermen */
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: #FEFEFE;
-  cursor: pointer;
-}
-
-/* Mobiele weergave */
-@media (max-width: 768px) {
-  nav {
-      display: none; /* Verberg het menu standaard */
-      flex-direction: column;
-      background-color: #00ff15;
-      position: absolute;
-      top: 60px;
-      right: 10px;
-      border: 2px solid #2C6320;
-      padding: 10px;
-  }
-
-  nav.active {
-      display: flex; /* Toon het menu als het actief is */
-  }
-
-  .menu-toggle {
-      display: block; /* Toon de hamburgerknop */
-  }
-}
-
-/* Voor desktop: standaard weergave */
-@media (min-width: 769px) {
-  .menu-toggle {
-      display: none; /* Verberg de hamburgerknop */
-  }
-
-  nav {
-      display: flex; /* Toon de navigatiebalk altijd op desktop */
-  }
-}
-
-footer {
-  display: flex;
-  width: 100%;
-  padding: 23px 47px;
-  justify-content: flex-end;
-  align-items: center;
-  background: linear-gradient(90deg, #2C6320 0%, rgba(71, 162, 53, 0.50) 25%, rgba(83, 187, 62, 0.50) 53.5%, rgba(89, 201, 66, 0.50) 79%);
-  border: 3px solid #000000;
-}
-
-footer h1 {
-  color: #000;
-  font-family: 'Inter', sans-serif;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-@media (max-width: 600px) {
-  .header {
-      font-size: 18px;
-  }
-
-  .nav {
-      flex-direction: column;
-  }
-
-  .nav-link {
-      font-size: 16px;
-      padding: 8px 0;
-  }
-
-  .container {
-      padding: 10px;
-  }
-
-  .footer {
-      font-size: 14px;
-  }
-}
-
-@media (max-width: 600px) {
-  header {
-      width: 100%;
-      height: auto; /* Past de hoogte aan op basis van de inhoud */
-      padding: 10px;
-      background: linear-gradient(90deg, #1B1818 0%, #2C6320 100%);
-      color: #000000;
-      border: 3px solid;
-      display: flex;
-      flex-direction: column; /* Stapelt de inhoud verticaal */
-      align-items: center;
-      justify-content: center;
-  }
-
-  header h2 {
-      color: #FEFEFE;
-      font-family: Inter, sans-serif;
-      font-size: 28px; /* Kleiner lettertype voor telefoons */
-      font-weight: 400;
-      text-align: center;
-      margin-bottom: 10px; /* Ruimte tussen de titel en links */
-  }
-
-  header a {
-      color: #000;
-      font-size: 16px; /* Kleiner lettertype voor links */
-      margin: 5px 0; /* Ruimte tussen de links */
-      text-decoration: none;
-  }
-
-  header a:hover {
-      text-decoration: underline;
-  }
-}
-
-/* Algemene stijl voor de inlogknop */
-.submit-button {
-  display: inline-block;
-  padding: 10px 20px; /* Basis padding */
-  font-size: 16px; /* Standaard tekstgrootte */
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #2C6320;
-  border: 2px solid #1B1818;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-/* Hover-effect voor pc */
-.submit-button:hover {
-  background-color: #1B1818;
-  color: #ffffff;
-}
-
-/* Mobiele stijl */
-@media (max-width: 768px) {
-  .submit-button {
-      font-size: 18px; /* Iets grotere tekst voor telefoons */
-      padding: 14px 24px; /* Meer tikruimte */
-  }
-
-  .submit-button:active {
-      transform: scale(0.95); /* Klikfeedback op mobiele apparaten */
-  }
-}
-.login-container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background: #043600;
-  border: 1px solid #003c05;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  color: white;
-}
-
-.login-container h2 {
   margin-bottom: 20px;
-  font-size: 24px;
-  color: #ffffff;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
 }
 
-/* Form group */
-.form-group {
-  margin-bottom: 15px;
-  text-align: left;
+.film-poster img {
+  max-width: 150px;
+  border-radius: 10px;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #ffffff;
+.film-details {
+  margin-left: 20px;
 }
 
-.form-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.film-details h2 {
+  font-size: 20px;
+  color: #2C6320;
+}
+
+.film-details p {
   font-size: 14px;
-  box-sizing: border-box;
-}
-
-/* Inlogknop */
-.login-button {
-  display: inline-block;
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #003406;
-  background-color: #2C6320;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.login-button:hover {
-  background-color: #1B1818;
-}
-
-.login-button:active {
-  transform: scale(0.98);
-}
-
-/* Responsieve stijl voor mobiel */
-@media (max-width: 768px) {
-  .login-container {
-      margin: 20px;
-      padding: 15px;
-  }
-
-  .login-container h2 {
-      font-size: 20px;
-  }
-
-  .form-group label {
-      font-size: 14px;
-  }
-
-  .form-group input {
-      font-size: 14px;
-  }
-
-  .login-button {
-      font-size: 14px;
-  }}
-
-/* Responsieve stijl voor mobiel */
-@media (max-width: 768px) {
-  .contact-form {
-      margin: 10px;
-      padding: 15px;
-  }
-
-  .contact-form h2 {
-      font-size: 20px;
-  }
-
-  .form-group label {
-      font-size: 12px;
-  }
-
-  .form-group input,
-  .form-group textarea {
-      font-size: 14px;
-  }
-
-  .form-group button {
-      font-size: 14px;
-      padding: 12px;
-  }
-}
-@media (max-width: 768px) {
-  main h1 {
-      font-size: 20px;
-  }
-
-  .film-info h2 {
-      font-size: 18px;
-  }
-
-  .film-info p {
-      font-size: 12px;
-  }
-
-  form label {
-      font-size: 12px;
-  }
-
-  form input {
-      font-size: 12px;
-      padding: 8px;
-  }
-
-  form button {
-      font-size: 14px;
-      padding: 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  main {
-      margin: 10px;
-      padding: 15px;
-  }
-
-  main h1 {
-      font-size: 24px;
-  }
-
-  main section h2 {
-      font-size: 20px;
-  }
-
-  main section p {
-      font-size: 14px;
-  }
-}
-
-/* Secties */
-.beheer-sectie {
-  margin-bottom: 30px;
-  padding: 20px;
-  background: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.beheer-sectie h2 {
-  margin-top: 0;
-  font-size: 22px;
-  border-bottom: 2px solid #2C6320;
-  padding-bottom: 5px;
-  color: #1B1818;
-}
-
-/* Tabel */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-table th, table td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
-  font-size: 14px;
-}
-
-table th {
-  background-color: #2C6320;
-  color: #ffffff;
-}
-
-table tr:nth-child(even) {
-  background-color: #f9f9f9;
+  color: #666;
 }
 
 /* Formulieren */
-form {
-  margin-top: 10px;
-}
-
-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
 form input, form select, form button {
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
+  margin: 10px 0;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 14px;
-  box-sizing: border-box;
 }
 
 form button {
   background-color: #2C6320;
-  color: #ffffff;
+  color: white;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 form button:hover {
@@ -630,151 +275,121 @@ form button:active {
   transform: scale(0.98);
 }
 
-/* Responsieve stijl voor mobiel */
+/* Footer */
+footer {
+  background: linear-gradient(90deg, #2C6320 0%, #59C942 100%);
+  color: #FEFEFE;
+  padding: 20px 30px;
+  text-align: center;
+  font-size: 14px;
+  border-top: 3px solid #1B1818;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  border-top: 3px solid #1B1818;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section a {
+  color: #bbb;
+  line-height: 1.6;
+}
+
+.footer-section a {
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  color: #bbb;
+}
+
+
+/* Responsiviteit */
 @media (max-width: 768px) {
   header {
-      font-size: 20px;
-      padding: 15px;
+    flex-direction: column;
+    text-align: center;
   }
-
-  main {
-      padding: 10px;
+  nav {
+    flex-direction: column;
+    gap: 10px;
   }
-
-  .beheer-sectie {
-      padding: 15px;
-  }
-
-  .beheer-sectie h2 {
-      font-size: 18px;
-  }
-
-  table th, table td {
-      font-size: 12px;
-      padding: 8px;
-  }
-
-  form input, form select, form button {
-      font-size: 12px;
-      padding: 8px;
-  }
-
-  form button {
-      font-size: 14px;
+  .film {
+    flex-direction: column;
   }
 }
 
-/* Responsieve stijl voor brede schermen (desktop) */
-@media (min-width: 1200px) {
-  main {
-      padding: 30px;
-  }
-
-  .beheer-sectie {
-      padding: 25px;
-  }
-
-  .beheer-sectie h2 {
-      font-size: 24px;
-  }
-
-  table th, table td {
-      font-size: 16px;
-      padding: 12px;
-  }
-
-  form input, form select, form button {
-      font-size: 16px;
-      padding: 12px;
-  }
+main {
+  padding: 20px 0;
 }
 
-
-/* Bestaande CSS-code */
-
-#movies {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  padding: 20px;
-  background: #f0f0f0;
-}
-
-.movie {
-  background: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+h1 {
   text-align: center;
-  padding: 16px;
+  color: #333;
+  margin-bottom: 40px;
 }
 
-.movie img {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ddd;
-  border-radius: 8px 8px 0 0;
-}
-
-.movie h3 {
-  font-size: 18px;
-  margin: 10px 0;
-  color: #2C6320;
-}
-
-.movie p {
-  font-size: 14px;
-  color: #555;
-}
-
-.movie button {
-  margin-top: 10px;
-  padding: 8px 16px;
-  font-size: 14px;
-  background-color: #2C6320;
-  color: #ffffff;
-  border: none;
+.about-section {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
   border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.movie button:hover {
-  background-color: #1B1818;
+.about-section h2 {
+  color: #2C6320;
+  margin-top: 0;
 }
 
-/* Responsieve stijl voor #movies-sectie */
-@media (max-width: 768px) {
-  #movies {
-    grid-template-columns: 1fr;
-    padding: 10px;
-  }
-
-  .movie {
-    padding: 10px;
-  }
-
-  .movie h3 {
-    font-size: 16px;
-  }
-
-  .movie p {
-    font-size: 12px;
-  }
-
-  .movie button {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
+.about-section p {
+  color: #666;
+  line-height: 1.6;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  #movies {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.about-section a {
+  color: #2C6320;
+  text-decoration: none;
+}
 
-  .movie {
-    padding: 14px;
-  }
+.about-section a:hover {
+  text-decoration: underline;
 }
