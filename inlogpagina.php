@@ -1,57 +1,40 @@
 <?php
 
-session_start();
+require_once 'PHP/header.php';
+require_once 'classes/db.php';
+require_once 'classes/user.php';
 
-require 'PHP/header.php'; 
-require 'dbconnectie.php';
 
-$error = '';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password']; // Ensure this matches the form field name
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['username'], $_POST['password'])) {
-    $username = htmlspecialchars($_POST['username']);
-    $password = htmlspecialchars($_POST['password']);
+    $user = new User();
+    $user_data = $user->login($username, $password);
 
-    try {
-        $sql = "SELECT username, password_hash, role FROM users WHERE username = :username";
-        $statement = $pdo->prepare($sql);
-        $statement->bindValue(':username', $username, PDO::PARAM_STR);
-        $statement->execute();
-
-        $user = $statement->fetch(PDO::FETCH_ASSOC);
-
-        if ($user && password_verify($password, $user['password_hash'])) {
-            $_SESSION['username'] = $user['username'];
-            $_SESSION['role'] = $user['role'];
-
-            // Var_dump om te controleren of de sessie goed wordt ingesteld
-            var_dump($_SESSION); // Dit zal de inhoud van $_SESSION tonen
-
-            if ($_SESSION['role'] == 'admin') {
-                header('Location: medewerkersportaal.php');
-            } else {
-                header('Location: dashboard.php');
-            }
-            exit;
-        } else {
-            $error = 'Ongeldige gebruikersnaam of wachtwoord.';
-        }
-    } catch (PDOException $e) {
-        $error = 'Databasefout: ' . $e->getMessage();
+    if ($user_data) {
+        $_SESSION['username'] = $user_data->username;
+        $_SESSION['role'] = $user_data->role;
+        $_SESSION['id'] = $user_data->id; // Store user ID in session
+        header('Location: medewerkersportaal.php');
+        exit;
+    } else {
+        echo "Invalid username or password";
     }
 }
 ?>
 
-
 <main>
-    <h2>Inloggen</h2>
-    <?php if ($error) echo "<p style='color: red;'>$error</p>"; ?>
-    <form method="post">
-        <label for="username">Gebruikersnaam:</label>
-        <input type="text" id="username" name="username" required>
-        <label for="password">Wachtwoord:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Inloggen</button>
-    </form>
-    <p><a href="registreren.php">Nog geen account? Registreer hier</a></p>
+    <div class="container">
+        <form method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Heb je nog geen account? <a href="registreren.php">Registreer hier</a></p>
+    </div>
 </main>
+
 <?php require 'PHP/footer.php'; ?>
