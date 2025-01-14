@@ -6,7 +6,7 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-content">
-                <h2>Welcome to MBO Cinemas</h2>
+               
                 <p>Where great stories come to life. Experience the best in movies and entertainment.</p>
                 <a href="films.php" class="btn-primary">Explore Our Movies</a>
             </div>
@@ -41,7 +41,11 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
+        <section class="about-section">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or feedback, feel free to reach out to us at <a href="mailto:info@mbocinemas.com">info@mbocinemas.com</a>.</p>
+        </section>
     </div>
 </main>
 <?php include 'PHP/footer.php'; ?>
-<script src="script.js"></script>

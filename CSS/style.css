@@ -275,6 +275,122 @@ form button:active {
   transform: scale(0.98);
 }
 
+/* Contact Section */
+.contact-section {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h2 {
+  color: #2C6320;
+  margin-top: 0;
+}
+
+.contact-section p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.contact-section a {
+  color: #2C6320;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section label {
+  margin-top: 10px;
+  color: #333;
+}
+
+.contact-section input, .contact-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.contact-section button {
+  background-color: #2C6320;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  margin-top: 10px;
+}
+
+.contact-section button:hover {
+  background-color: #1B1818;
+}
+
+.contact-section button:active {
+  transform: scale(0.98);
+}
+
+/* Locations Section */
+.locations-section {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.locations-section h2 {
+  color: #2C6320;
+  margin-top: 0;
+}
+
+.locations-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1;
+  margin: 0 10px;
+}
+
+.card h3 {
+  color: #2C6320;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .locations-cards {
+    flex-direction: column;
+  }
+  .card {
+    margin: 10px 0;
+  }
+}
+
 /* Footer */
 footer {
   background: linear-gradient(90deg, #2C6320 0%, #59C942 100%);
@@ -392,4 +508,58 @@ h1 {
 
 .about-section a:hover {
   text-decoration: underline;
+}
+
+.hero-section {
+  background: url('img/hero.jpg') no-repeat center center/cover;
+  padding: 60px 0;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.hero-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background: #2C6320;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #59C942;
+}
+
+.mission-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .mission-cards {
+    flex-direction: column;
+  }
+  .card {
+    margin: 10px 0;
+  }
 }
