@@ -22,8 +22,8 @@
             <a href="index.php"><h2>🎬Mbocinemas</h2></a>
             <a href="films.php"><h4>Films</h4></a>
             <a href="reserveringen.php"><h4>Mijn Reserveringen</h4></a>
-            <a href="contact.php"><h4>Contact</h4></a>
             <a href="aboutus.php"><h4>About Us</h4></a>
+            <a href="contact.php"><h4>Contact</h4></a>
             <input type="text" placeholder="Film Zoeken">
             
             <?php if (isset($_SESSION['username'])): ?>
@@ -36,3 +36,4 @@
         </nav>
     </div>
 </header>
+
