@@ -393,3 +393,10 @@ h1 {
 .about-section a:hover {
   text-decoration: underline;
 }
+
+.valid {
+  color: green;
+}
+.invalid {
+  color: red;
+}
