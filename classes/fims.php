@@ -77,6 +77,25 @@ class Films extends Database {
             return [];
         }
     }
+
+    public function updateMovie($id, $title, $description, $release_date, $duration, $poster) {
+        $query = "UPDATE movies SET title = :title, description = :description, release_date = :release_date, duration = :duration, poster = :poster WHERE id = :id";
+        try {
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute([
+                'id' => $id,
+                'title' => $title,
+                'description' => $description,
+                'release_date' => $release_date,
+                'duration' => $duration,
+                'poster' => $poster
+            ]);
+            return true;
+        } catch (PDOException $e) {
+            echo "Error updating movie: " . $e->getMessage();
+            return false;
+        }
+    }
 }
 
 ?>

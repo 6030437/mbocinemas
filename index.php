@@ -1,10 +1,16 @@
 <?php include 'PHP/header.php'; ?>
 
+<?php
+require_once 'classes/fims.php';
+$films = new Films();
+$all_movies = $films->getMovies();
+$trending_movies = array_slice($all_movies, 0, 4); // Assuming the first 4 movies are trending
+?>
+
 <main>
     <div class="container">
-    <section class="hero-section">
+        <section class="hero-section">
             <div class="hero-content">
-                <h2>Welcome to MBO Cinemas</h2>
                 <p>Where great stories come to life. Experience the best in movies and entertainment.</p>
                 <a href="films.php" class="btn-primary">Explore Our Movies</a>
             </div>
@@ -30,6 +36,19 @@
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
+
+        <section class="trending-section">
+            <h2>Trending Films</h2>
+            <div class="trending-films">
+                <?php foreach ($trending_movies as $movie): ?>
+                    <div class="film-card">
+                        <img src="<?php echo htmlspecialchars($movie->poster); ?>" alt="Poster">
+                        <h3><?php echo htmlspecialchars($movie->title); ?></h3>
+                        <p><?php echo htmlspecialchars($movie->description); ?></p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </section>
     </div>
 </main>
 

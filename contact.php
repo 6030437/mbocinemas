@@ -1,7 +1,6 @@
 <?php include 'PHP/header.php'; ?>
 <main>
     <div class="container">
-        <h1>Contact Us</h1>
         <section class="contact-section">
             <h2>Get in Touch</h2>
             <p>If you have any questions or feedback, feel free to reach out to us using the form below or via email at <a href="mailto:info@mbocinemas.com">info@mbocinemas.com</a>.</p>
