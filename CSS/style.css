@@ -49,6 +49,8 @@ header a {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
+  list-style: none;
+
   font-size: 16px;
 }
 
@@ -61,6 +63,8 @@ header ul {
 
 header li {
   margin: 0 20px;
+  list-style: none;
+
 }
 
 header #branding {
@@ -393,72 +397,140 @@ form button:active {
 
 /* Footer */
 footer {
-  background: linear-gradient(90deg, #2C6320 0%, #59C942 100%);
-  color: #FEFEFE;
-  padding: 20px 30px;
-  text-align: center;
-  font-size: 14px;
-  border-top: 3px solid #1B1818;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  bottom: 0;
-  width: 100%;
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    border-top: 3px solid #1B1818;
+    text-align: center;
 }
 
 footer p {
-  margin: 0;
-}
-
-footer {
-  background: #333;
-  color: #fff;
-  padding: 20px 0;
-  border-top: 3px solid #1B1818;
+    margin: 0;
+    color: #bbb;
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer-section {
-  flex: 1;
-  margin: 10px;
+    flex: 1;
+    margin: 10px;
 }
 
 .footer-section h3 {
-  color: #fff;
-  margin-bottom: 10px;
+    color: #fff;
+    margin-bottom: 10px;
 }
 
 .footer-section p, .footer-section a {
-  color: #bbb;
-  line-height: 1.6;
+    color: #bbb;
+    line-height: 1.6;
 }
 
 .footer-section a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .footer-section a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .footer-section ul {
-  list-style: none;
-  padding: 0;
-  
+    list-style: none; /* Remove bullet points */
+    padding: 0;
 }
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
 .footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  color: #bbb;
+    text-align: center;
+    margin-top: 20px;
+    color: #bbb;
 }
 
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-section {
+        margin: 20px 0;
+    }
+}
 
-/* Responsiviteit */
+/* Add Movie Form Styling */
+.add-movie-form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 0 auto 20px;
+}
+
+.add-movie-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #2C6320;
+}
+
+.add-movie-form input,
+.add-movie-form textarea,
+.add-movie-form button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.add-movie-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.add-movie-form button {
+  background-color: #2C6320;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.add-movie-form button:hover {
+  background-color: #59C942;
+}
+
+.add-movie-form button:active {
+  transform: scale(0.98);
+}
+
+.add-movie-form input:focus,
+.add-movie-form textarea:focus {
+  border-color: #2C6320;
+  outline: none;
+  box-shadow: 0 0 5px rgba(44, 99, 32, 0.5);
+}
+
+/* Beheer and Films Section Styling */
+.beheer-sectie, .films-sectie {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -471,95 +543,10 @@ footer {
   .film {
     flex-direction: column;
   }
-}
-
-main {
-  padding: 20px 0;
-}
-
-h1 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 40px;
-}
-
-.about-section {
-  background: #fff;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.about-section h2 {
-  color: #2C6320;
-  margin-top: 0;
-}
-
-.about-section p {
-  color: #666;
-  line-height: 1.6;
-}
-
-.about-section a {
-  color: #2C6320;
-  text-decoration: none;
-}
-
-.about-section a:hover {
-  text-decoration: underline;
-}
-
-.hero-section {
-  background: url('img/hero.jpg') no-repeat center center/cover;
-  padding: 60px 0;
-  color: #fff;
-  text-align: center;
-  border-radius: 10px;
-  margin-bottom: 40px;
-}
-
-.hero-content h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.hero-content p {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.btn-primary {
-  background: #2C6320;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-}
-
-.btn-primary:hover {
-  background: #59C942;
-}
-
-.mission-cards {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  .mission-cards {
+  .mission-cards, .featured-movies, .locations-cards {
     flex-direction: column;
   }
-  .card {
+  .card, .movie {
     margin: 10px 0;
   }
 }
