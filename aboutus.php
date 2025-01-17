@@ -1,7 +1,6 @@
 <?php include 'PHP/header.php'; ?>
 <main>
     <div class="container">
-        <h1>About MBO Cinemas</h1>
         
         <!-- Hero Section -->
         <section class="hero-section">
@@ -42,10 +41,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section class="about-section">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or feedback, feel free to reach out to us at <a href="mailto:info@mbocinemas.com">info@mbocinemas.com</a>.</p>
-        </section>
+
     </div>
 </main>
 <?php include 'PHP/footer.php'; ?>
